@@ -3,12 +3,12 @@
 
 
 {% block content %}
-<div class="col-4 mx-auto">
-    <div class="row">
-        <div class="user_avatar text-center">
-            <img src="/media/{{ user.avatar|default:'avatar-default.png' }}" class="rounded-circle w-25">
+    <div class="col-4 mx-auto">
+        <div class="row">
+            <div class="user_avatar">
+                <img src="/media/{{ user.avatar }}" class="rounded-circle">
+            </div>
         </div>
-    </div>
     <div class="row">
         <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -22,5 +22,5 @@
             </a>
         </button>
     </div>
-</div>
+    </div>
 {% endblock %}
